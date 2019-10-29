@@ -40,6 +40,7 @@ module StripeMock
     include StripeMock::RequestHandlers::Events
     include StripeMock::RequestHandlers::Invoices
     include StripeMock::RequestHandlers::InvoiceItems
+    include StripeMock::RequestHandlers::OAuth
     include StripeMock::RequestHandlers::Orders
     include StripeMock::RequestHandlers::Plans
     include StripeMock::RequestHandlers::Prices

@@ -47,6 +47,7 @@ module StripeMock
         'charge.updated',
         'charge.failed',
         'charge.refunded',
+        'charge.refund.updated',
         'charge.dispute.created',
         'charge.dispute.updated',
         'charge.dispute.closed',

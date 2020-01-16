@@ -1,0 +1,34 @@
+{
+  "id": "evt_00000000",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1578670600,
+  "data": {
+    "object": {
+      "id": "pyr_00000000",
+      "object": "refund",
+      "amount": 1000,
+      "balance_transaction": "txn_00000000",
+      "charge": "py_00000000",
+      "created": 1578670200,
+      "currency": "usd",
+      "metadata": {
+      },
+      "payment_intent": "pi_00000000",
+      "reason": null,
+      "receipt_number": null,
+      "source_transfer_reversal": null,
+      "status": "succeeded",
+      "transfer_reversal": null
+    },
+    "previous_attributes": {
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": {
+    "id": null,
+    "idempotency_key": null
+  },
+  "type": "charge.refund.updated"
+}

@@ -1467,9 +1467,9 @@ module StripeMock
       {
         access_token: access_token,
         livemode: false,
-        refresh_token: "rt_G51tx58Z0TGFwfliZesYrpSRdkKPsT5PMiZNlTVuRHXKmniG",
+        refresh_token: "rt_000000",
         token_type: "bearer",
-        stripe_publishable_key: "pk_test_f0ArghLn0kIqT43gerG43gddUqL",
+        stripe_publishable_key: "pk_test_000000",
         stripe_user_id: account_id,
         scope: "express"
       }
@@ -1480,6 +1480,21 @@ module StripeMock
         object: "login_link",
         created: Time.now.to_i,
         url: "https://connect.stripe.com/express/#{SecureRandom.alphanumeric(12)}"
+      }
+    end
+
+    def self.mock_account_link(params)
+      account_id = params[:account] || "acct_1FYroeK3LoOdegW"
+      {
+        "object": "account_link",
+        "created": 1583948019,
+        "expires_at": 1583948319,
+        "url": "https://connect.stripe.com/setup/c/#{SecureRandom.alphanumeric(12)}",
+        "id": "acctlink_00000000",
+        "account": account_id,
+        "failure_url": params[:failure_url],
+        "success_url": params[:success_url],
+        "type": params[:type]
       }
     end
   end

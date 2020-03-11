@@ -8,6 +8,7 @@ module StripeMock
         klass.add_handler 'get /v1/account',        :get_account
         klass.add_handler 'get /v1/accounts/(.*)',  :get_account
         klass.add_handler 'post /v1/accounts/(.*)/login_links', :login_links
+        klass.add_handler 'post /v1/account_links', :account_links
         klass.add_handler 'post /v1/accounts/(.*)', :update_account
         klass.add_handler 'get /v1/accounts',       :list_accounts
         klass.add_handler 'post /oauth/deauthorize',:deauthorize
@@ -54,6 +55,12 @@ module StripeMock
         assert_existence :account, $1, accounts[$1]
 
         Data.mock_login_link
+      end
+
+      def account_links(route, method_url, params, headers)
+        route =~ method_url
+
+        Data.mock_account_link(params)
       end
 
       private

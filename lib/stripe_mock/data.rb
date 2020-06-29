@@ -20,6 +20,9 @@ module StripeMock
         country: "US",
         object: "account",
         business_name: "Stripe.com",
+        business_profile: {
+          name: 'Stripe.com'
+        },
         business_url: nil,
         support_phone: nil,
         managed: false,
@@ -33,6 +36,13 @@ module StripeMock
           data: [
 
           ]
+        },
+        requirements: {
+          disabled_reason: nil,
+          eventually_due: [],
+          currently_due: [],
+          past_due: [],
+          current_deadline: nil
         },
         verification: {
           fields_needed: [],
@@ -56,6 +66,18 @@ module StripeMock
             has_more: false,
             total_count: 0,
             url: "/v1/accounts/#{id}/external_accounts"
+        },
+        company: {
+          name: 'Stripe.com',
+          tax_id: nil,
+          address: {
+            line1: nil,
+            line2: nil,
+            city: nil,
+            state: nil,
+            postal_code: nil,
+            country: "US"
+          },
         },
         legal_entity: {
           type: nil,

@@ -7,7 +7,6 @@ module StripeMock
         klass.add_handler 'post /v1/accounts',      :new_account
         klass.add_handler 'get /v1/account',        :get_account
         klass.add_handler 'get /v1/accounts/(.*)',  :get_account
-        klass.add_handler 'post /v1/accounts/(.*)/login_links', :login_links
         klass.add_handler 'post /v1/accounts/(.*)', :update_account
         klass.add_handler 'get /v1/accounts',       :list_accounts
         klass.add_handler 'post /oauth/deauthorize',:deauthorize
@@ -47,13 +46,6 @@ module StripeMock
         init_account
         route =~ method_url
         Stripe::StripeObject.construct_from(:stripe_user_id => params[:stripe_user_id])
-      end
-
-      def login_links(route, method_url, params, headers)
-        route =~ method_url
-        assert_existence :account, $1, accounts[$1]
-
-        Data.mock_login_link
       end
 
       private
